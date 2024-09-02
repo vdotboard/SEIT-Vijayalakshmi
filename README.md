@@ -1,4 +1,4 @@
-# Cucumber-Java-Selenium updated changes
+# Cucumber-Java-Selenium
 
 This is a simple setup for Cucumber with Selenium using Java.
 
