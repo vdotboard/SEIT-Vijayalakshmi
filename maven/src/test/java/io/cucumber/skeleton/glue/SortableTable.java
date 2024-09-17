@@ -23,7 +23,6 @@ public class SortableTable extends Context {
 
     @When("I click on the sortable table link")
     public void I_click_on_the_sortable_table_link() {
-
         WebElement tablelink = driver.findElement(By.xpath("//a[@href='/tables']"));
         tablelink.click();
     }
@@ -32,22 +31,12 @@ public class SortableTable extends Context {
     public void i_should_see_the_following_rows_in_the_example1_table(io.cucumber.datatable.DataTable expectedTable) {
        
         WebElement table = driver.findElement(By.id("table1"));
-
-       
         List<WebElement> rows = table.findElements(By.xpath(".//tbody/tr"));
-
-      
         List<Map<String, String>> expectedRows = expectedTable.asMaps(String.class, String.class);
-
-       
         for (int i = 0; i < expectedRows.size(); i++) {
-            // Find each cell in the current row
+
             List<WebElement> cells = rows.get(i).findElements(By.tagName("td"));
-
-    
             Map<String, String> expectedRow = expectedRows.get(i);
-
-      
             assertEquals(expectedRow.get("Last Name"), cells.get(0).getText());
            assertEquals( expectedRow.get("First Name"), cells.get(1).getText());
          assertEquals(expectedRow.get("Email"), cells.get(2).getText());

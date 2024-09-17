@@ -28,7 +28,6 @@ public class BasicAuth extends Context {
     public void i_enter_the_username_and_password(String username, String password) {
      username = ConfigReader.getProperty("username");
         password = ConfigReader.getProperty("password");
-        // Formats the URL with basic authentication
         String url = "https://" + username + ":" + password + "@the-internet.herokuapp.com/basic_auth";
         driver.get(url);
     }

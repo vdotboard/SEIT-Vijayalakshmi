@@ -31,9 +31,8 @@ public class Home extends Context {
 
   @When("I retrieve the list of examples")
   public void i_retrieve_the_list_of_examples() {
-    // Find all example links under the <ul> element
-    List<WebElement> exampleLinks = driver.findElements(By.cssSelector("ul li a"));
 
+    List<WebElement> exampleLinks = driver.findElements(By.cssSelector("ul li a"));
     for (WebElement link : exampleLinks) {
       actualExamplesList.add(link.getText().trim());
     }
@@ -41,7 +40,6 @@ public class Home extends Context {
 
   @Then("I should see the following examples:")
   public void i_should_see_the_following_examples(List<String> expectedExamplesList) {
-    // Assert that the actual list matches the expected list
     for (String expected : expectedExamplesList) {
       assertTrue(actualExamplesList.contains(expected),
               "The expected example '" + expected + "' was not found in the actual examples list!");

@@ -8,7 +8,7 @@ public class ConfigReader {
 
     final static Properties properties;
 
-    // Static block to initialize properties file
+
     static {
         try {
             FileInputStream fileInputStream = new FileInputStream("src/test/resources/config/testdata.properties");
@@ -20,7 +20,7 @@ public class ConfigReader {
         }
     }
 
-    // Method to get property value by key
+
     public static String getProperty(String key) {
         return properties.getProperty(key);
     }
